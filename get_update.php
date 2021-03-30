@@ -3,7 +3,7 @@ session_start();
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 require("./get_function.php");
 require("./get_const.php");
-
+// Patch 2.4.002 UP maxlength | Amaini | UCRACK.COM
 //Редериктор на главную страницу для пользователей без прав администратора
 global $USER;
 if(!$USER->IsAdmin())
@@ -81,7 +81,7 @@ foreach($modules as $modId => $infMod){
 <form id="infkey" action="get_update.php" method="post"></form>
 <form id="reset" action="get_update.php" method="post"></form>
 
-<p>Ключ: <input id="key" name="k" form="infkey" value="<?=$_POST['k']?>" size="28" maxlength="23"></p>
+<p>Ключ: <input id="key" name="k" form="infkey" value="<?=$_POST['k']?>" size="30" maxlength="26"></p>
 
 
 <p><input name="command" form="infkey" value="module" hidden="true">
